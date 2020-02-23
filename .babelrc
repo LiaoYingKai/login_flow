@@ -1,6 +1,15 @@
 {
 	"presets": [
-		"@babel/env", "@babel/react"
+		"@babel/env",
+		"@babel/react",
+		[
+			"@babel/preset-env",
+			{
+				"targets": {
+					"node": "current"
+				}
+			}
+		]
 	],
 	"plugins": [
 		"@babel/syntax-dynamic-import"
