@@ -53,5 +53,16 @@
 		"redux-logger": "^3.0.6",
 		"redux-observable": "^1.2.0",
 		"rxjs": "^6.5.4"
+	},
+	"jest": {
+		"setupFilesAfterEnv": [
+			"<rootDir>src/test/jest.setup.js"
+		],
+		"transform": {
+			"^.+\\.(js|jsx)$": "babel-jest"
+		},
+		"moduleNameMapper": {
+			"\\.(css|scss|)$": "<rootDir>src/test/styleMock.js"
+		}
 	}
 }
