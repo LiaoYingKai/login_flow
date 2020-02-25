@@ -6,7 +6,8 @@
 	"scripts": {
 		"dev": "webpack-dev-server --devtool eval --progress --colors --content-base --hot",
 		"build": "webpack",
-		"test": "jest"
+		"test": "jest",
+		"coverage": "jest --coverage"
 	},
 	"keywords": [],
 	"author": "",
@@ -62,7 +63,8 @@
 			"^.+\\.(js|jsx)$": "babel-jest"
 		},
 		"moduleNameMapper": {
-			"\\.(css|scss|)$": "<rootDir>src/test/styleMock.js"
+			"\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>src/test/__mock__/fileMock.js",
+			"\\.(css|scss|)$": "<rootDir>src/test/__mock__/styleMock.js"
 		}
 	}
 }
