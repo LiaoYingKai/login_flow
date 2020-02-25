@@ -21,6 +21,8 @@
 		"babel-jest": "^25.1.0",
 		"babel-loader": "^8.0.6",
 		"css-loader": "^3.0.0",
+		"enzyme": "^3.11.0",
+		"enzyme-adapter-react-16": "^1.15.2",
 		"eslint-plugin-async-await": "0.0.0",
 		"eslint-plugin-react": "^7.16.0",
 		"eslint-plugin-react-hooks": "^2.2.0",
