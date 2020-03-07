@@ -14,13 +14,13 @@ function LayoutHeader() {
 		<div className="header">
 			<ul>
 				<li>
-					<NavLink exact to={HOME} activeClassName="activeLink">Home</NavLink>
+					<NavLink exact to={HOME} activeClassName="activeLink" className="home">Home</NavLink>
 				</li>
 				<li>
-					<NavLink to={ABOUT} activeClassName="activeLink">About</NavLink>
+					<NavLink to={ABOUT} activeClassName="activeLink" className="about">About</NavLink>
 				</li>
 				<li>
-					<NavLink to={CONTACT} activeClassName="activeLink">Contact</NavLink>
+					<NavLink to={CONTACT} activeClassName="activeLink" className="contact">Contact</NavLink>
 				</li>
 			</ul>
 		</div>
