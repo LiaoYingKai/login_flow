@@ -1,3 +1,11 @@
-.test {
-	color: red;
+.button {
+	border-radius: 5px;
+	&__large {
+		padding: 6px 16px;
+		font-size: 20px;
+	}
+	&__medium {
+		padding: 4px 8px;
+		font-size: 14px;
+	}
 }
