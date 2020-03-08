@@ -5,29 +5,29 @@ import './style.scss';
 
 const PREFIX_CLASS = 'button';
 
-const SizeEnums = {
-	LARGE: 'large',
-	MEDIUM: 'medium',
+const TypeEnums = {
+	BUTTON: 'button',
+	TEXT: 'test',
 };
 
-const TypeEnums = {
-	LARGE: 'large',
-	MEDIUM: 'medium',
-};
+const {
+	BUTTON,
+	TEXT,
+} = TypeEnums;
 
 const propTypes = {
 	className: PropTypes.string,
 	onClick: PropTypes.func,
-	type: PropTypes.oneOf(Object.values(SizeEnums)),
 	children: PropTypes.oneOfType([
 		PropTypes.string,
 		PropTypes.node,
 	]),
+	type: PropTypes.oneOf(Object.values(TypeEnums))
 };
 
 const defaultProps = {
 	onClick: () => {},
-	size: SizeEnums.MEDIUM,
+	type: BUTTON,
 };
 
 function Button({ className, children, onClick, type }) {
@@ -35,8 +35,10 @@ function Button({ className, children, onClick, type }) {
 		<button
 			className={cx(
 				className,
-				PREFIX_CLASS,
-				[`${PREFIX_CLASS}__${type}`],
+				{
+					[`${PREFIX_CLASS}__text`]: type === TEXT,
+					[PREFIX_CLASS]: type === BUTTON,
+				}
 			)}
 			onClick={onClick}
 		>
@@ -47,7 +49,6 @@ function Button({ className, children, onClick, type }) {
 
 Button.propTypes = propTypes;
 Button.defaultProps = defaultProps;
-Button.SizeEnums = SizeEnums;
 Button.TypeEnums = TypeEnums;
 
 export default Button;

@@ -1,11 +1,26 @@
 .button {
-	border-radius: 5px;
-	&__large {
-		padding: 6px 16px;
-		font-size: 20px;
-	}
-	&__medium {
+	border-radius: 10px;
+	width: 100%;
+	color: #b0e5ed;
+	background-color: #358ca7;
+	font-size: 28px;
+	padding: 10px 0;
+	border: none;
+	cursor: pointer;
+	&__text {
 		padding: 4px 8px;
 		font-size: 14px;
+	}
+}
+
+.button__text {
+	color: #fff;
+	background-color: transparent;
+	border: none;
+	font-size: 16px;
+	cursor: pointer;
+	padding: 0px 4px;
+	&:hover {
+		color: #358ca7;
 	}
 }
