@@ -5,7 +5,13 @@ class Login extends Component {
 	render() {
 		return (
 			<div className="login">
-					Hello World!!!
+				<div className="login__content">
+					<div className="login__content-title">Sign In</div>
+					
+				</div>
+				<div className="login__prompt">
+					Dont have a account? DEGISTER HERE
+				</div>
 			</div>
 		);
 	}
