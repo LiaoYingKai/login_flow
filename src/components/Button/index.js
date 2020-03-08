@@ -7,7 +7,7 @@ const PREFIX_CLASS = 'button';
 
 const TypeEnums = {
 	BUTTON: 'button',
-	TEXT: 'test',
+	TEXT: 'text',
 };
 
 const {
