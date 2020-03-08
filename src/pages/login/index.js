@@ -5,9 +5,7 @@ class Login extends Component {
 	render() {
 		return (
 			<div className="login">
-				<div>
 					Hello World!!!
-				</div>
 			</div>
 		);
 	}
