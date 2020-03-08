@@ -41,6 +41,7 @@
 		"webpack-dev-server": "^3.7.2"
 	},
 	"dependencies": {
+		"classnames": "^2.2.6",
 		"eslint": "^6.0.1",
 		"immutable": "^4.0.0-rc.12",
 		"puppeteer": "^2.1.1",
@@ -58,7 +59,7 @@
 	},
 	"jest": {
 		"setupFilesAfterEnv": [
-			"<rootDir>src/test/jest.setup.js"
+			"<rootDir>src/test/setup/jest.setup.js"
 		],
 		"transform": {
 			"^.+\\.(js|jsx)$": "babel-jest"
