@@ -1,4 +1,5 @@
 import React, { Component, } from 'react';
+import Button from '../../components/Button';
 import './style.scss';
 
 class Login extends Component {
@@ -7,10 +8,14 @@ class Login extends Component {
 			<div className="login">
 				<div className="login__content">
 					<div className="login__content-title">Sign In</div>
-					
+					<Button type={Button.TypeEnums.BUTTON}>Login</Button>
+					<div>
+						<Button type={Button.TypeEnums.TEXT}>Forget Password?</Button>
+					</div>
 				</div>
 				<div className="login__prompt">
-					Dont have a account? DEGISTER HERE
+					Dont have a account?
+					<Button type={Button.TypeEnums.TEXT}>DEGISTER HERE</Button>
 				</div>
 			</div>
 		);
