@@ -2,6 +2,7 @@
 import React from 'react';
 import Button from '../../components/Button';
 import { shallow, mount, } from "enzyme";
+import toJson from 'enzyme-to-json';
 
 describe("Button", () => {
 	it("should handle default props", () => {
@@ -34,7 +35,7 @@ describe("Button", () => {
 			Button
 		</Button>);
 
-		expect(wrapper).toMatchSnapshot();
+		expect(toJson(wrapper)).toMatchSnapshot();
 	});
 
 	it("should mount in a full DOM", () => {

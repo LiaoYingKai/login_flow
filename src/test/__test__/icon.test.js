@@ -2,6 +2,7 @@
 import React from 'react';
 import Icon from '../../components/Icon';
 import { shallow, mount, } from "enzyme";
+import toJson from 'enzyme-to-json';
 
 describe("Icon", () => {
 	it("should handle default props", () => {
@@ -20,7 +21,7 @@ describe("Icon", () => {
 		const className = 'mock-class';
 		const wrapper = shallow(<Icon className={className}/>);
 
-		expect(wrapper).toMatchSnapshot();
+		expect(toJson(wrapper)).toMatchSnapshot();
 	});
 
 	it("should mount in a full DOM", () => {
