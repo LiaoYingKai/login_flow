@@ -7,9 +7,9 @@ import { faUser as regularUser  } from '@fortawesome/free-regular-svg-icons';
 import './style.scss';
 
 const TypeEnums = {
-	SOLID_USER: 'solidUser',
-	REGULAR_USER: 'regularUser',
-	SOLID_LOCK: 'solidLock',
+	SOLID_USER: 'solid-user',
+	REGULAR_USER: 'regular-user',
+	SOLID_LOCK: 'solid-lock',
 };
 
 const SizeEnums = {

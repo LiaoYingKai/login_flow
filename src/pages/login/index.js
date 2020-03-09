@@ -1,5 +1,6 @@
 import React, { Component, } from 'react';
 import Button from '../../components/Button';
+import Icon from '../../components/Icon';
 import './style.scss';
 
 class Login extends Component {
@@ -17,6 +18,9 @@ class Login extends Component {
 					Dont have a account?
 					<Button type={Button.TypeEnums.TEXT}>DEGISTER HERE</Button>
 				</div>
+				<Icon/>
+				<Icon type={Icon.TypeEnums.SOLID_USER} size={Icon.SizeEnums.MEDIUM} color={Icon.ColorEnums.GRAY}/>
+				<Icon type={Icon.TypeEnums.SOLID_LOCK} size={Icon.SizeEnums.MEDIUM} color={Icon.ColorEnums.GRAY}/>
 			</div>
 		);
 	}
