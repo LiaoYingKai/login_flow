@@ -1,0 +1,20 @@
+.icon {
+	> svg.svg-inline--fa {
+		width: 100%;
+		height: 100%;
+	}
+	&__large {
+		width: 50px;
+		height: 50px;
+	}
+	&__medium {
+		width: 32px;
+		height: 32px;
+	}
+	&__gray {
+		color: #878787;
+	}
+	&__light-blue {
+		color: #d0eaf6;
+	}
+}
