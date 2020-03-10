@@ -8,6 +8,9 @@ class Login extends Component {
 		return (
 			<div className="login">
 				<div className="login__content">
+					<div className="login__logo">
+						<Icon/>
+					</div>
 					<div className="login__content-title">Sign In</div>
 					<Button type={Button.TypeEnums.BUTTON}>Login</Button>
 					<div>
@@ -18,9 +21,6 @@ class Login extends Component {
 					Dont have a account?
 					<Button type={Button.TypeEnums.TEXT}>DEGISTER HERE</Button>
 				</div>
-				<Icon/>
-				<Icon type={Icon.TypeEnums.SOLID_USER} size={Icon.SizeEnums.MEDIUM} color={Icon.ColorEnums.GRAY}/>
-				<Icon type={Icon.TypeEnums.SOLID_LOCK} size={Icon.SizeEnums.MEDIUM} color={Icon.ColorEnums.GRAY}/>
 			</div>
 		);
 	}

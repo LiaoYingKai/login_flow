@@ -9,6 +9,7 @@
 	justify-content: center;
 	flex-direction: column;
 	&__content {
+		position: relative;
 		background-color: rgba(255, 255, 255, 0.4);
 		width: 400px;
 		height: 500px;
@@ -20,6 +21,19 @@
 			color: #8b8d8c;
 			font-size: 36px;
 		}
+	}
+	&__logo {
+		position: absolute;
+		width: 90px;
+		height: 90px;
+		border-radius: 50%;
+		background-color: #358ca7;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		top: -45px;
+		right: calc(50% - 45px);
+		opacity: 0.8;
 	}
 
 	&__prompt {
