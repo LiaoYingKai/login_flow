@@ -1,0 +1,23 @@
+.checkbox {
+	display: inline-block;
+	label {
+		cursor: pointer;
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		background: #fff;
+		border-radius: 3px;
+		text-align: center;
+	}
+	input[type="checkbox"] {
+		display: none;
+		&:checked ~ label {
+			&:before {
+				display: inline-block;
+				content: "✓";
+				line-height: 16px;
+				color: #358ca7;
+			}
+		}
+	}
+}
