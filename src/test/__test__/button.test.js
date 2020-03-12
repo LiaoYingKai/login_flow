@@ -11,6 +11,7 @@ describe("Button", () => {
 			type,
 		} = Button.defaultProps;
 
+		expect(onClick).toBeDefined();
 		expect(onClick).toBeInstanceOf(Function);
 		expect(type).toBe(Button.TypeEnums.BUTTON);
 	});

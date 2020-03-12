@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox should render corrent 1`] = `
+<div
+  className="checkbox"
+>
+  <input
+    id="checkbox"
+    onChange={[Function]}
+    type="checkbox"
+    value={false}
+  />
+  <label
+    htmlFor="checkbox"
+  />
+</div>
+`;
