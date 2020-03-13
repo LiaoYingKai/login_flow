@@ -20,13 +20,16 @@ class Login extends Component {
 					</div>
 					<div className="login__content-title">Sign In</div>
 					<Button type={Button.TypeEnums.BUTTON}>Login</Button>
-					<div>
+					<div className="login__bottom">
+						<div>
+							<Checkbox
+								onChange={(event) => {this.setState({ value: event.target.value });}}
+								value={this.state.value}
+							/>
+							Remember Me
+						</div>
 						<Button type={Button.TypeEnums.TEXT}>Forget Password?</Button>
 					</div>
-					<Checkbox
-						onChange={(event) => {this.setState({ value: event.target.value });}}
-						value={this.state.value}
-					/>
 				</div>
 				<div className="login__prompt">
 					Dont have a account?

@@ -36,6 +36,20 @@
 		opacity: 0.8;
 	}
 
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+		> div {
+			display: flex;
+			line-height: 16px;
+			color: #fff;
+			.checkbox {
+				margin-right: 8px;
+			}
+		}
+
+	}
+
 	&__prompt {
 		color: #fff;
 		border-top: 2px solid #fff;
