@@ -11,12 +11,15 @@
 	&__content {
 		position: relative;
 		background-color: rgba(255, 255, 255, 0.4);
-		width: 400px;
-		height: 500px;
+		width: 360px;
+		height: 400px;
 		box-sizing: border-box;
 		border-radius: 20px;
 		text-align: center;
 		padding: 50px 40px 30px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 		&-title {
 			color: #8b8d8c;
 			font-size: 36px;
