@@ -1,4 +1,4 @@
-import React, { useState, } from 'react';
+import React, { useState } from 'react';
 import Button from '../../components/Button';
 import Icon from '../../components/Icon';
 import Checkbox from '../../components/Checkbox';
@@ -21,8 +21,39 @@ const {
 
 function Login() {
 	const [ account, setAccount ] = useState('');
+	const [ accountErrorText, setAccountErrorText ] = useState('');
 	const [ password, setPassword ] = useState('');
+	const [ passwordErrorText, setPasswordErrorText ] = useState('');
 	const [ isRemember, setIsRemember ] = useState(false);
+
+	function _handleChangeAccount(event) {
+		const value = event.target.value;
+
+		setAccount(value);
+		setAccountErrorText(_handleVerification(value, '帳號'));
+	}
+
+	function _handleChangePassword(event) {
+		const value = event.target.value;
+
+		setPassword(value);
+		setPasswordErrorText(_handleVerification(value, '密碼'));
+	}
+
+	function _handleVerification(value, text) {
+		const hasNumber = /\d+/;
+		const hasLetter = /[a-zA-z]+/;
+
+		if (value.length < 6) { 
+			return `${text}最短要 6 個字`;
+		} else if (value.length > 20) {
+			return `${text}最多 20 個字`;
+		} else if (!(hasNumber.test(value) && hasLetter.test(value))) {
+			return `${text}至少一個英文與一個數字`;
+		} else {
+			return '';
+		}
+	}
 
 	return (
 		<div className="login">
@@ -34,15 +65,15 @@ function Login() {
 				<Input
 					prefixItem={<Icon size={MEDIUM} type={SOLID_USER} color={GRAY} />}
 					value={account}
-					onChange={(event) => {setAccount(event.target.value);}}
-					isDisable
+					onChange={_handleChangeAccount}
+					errorText={accountErrorText}
 				/>
 				<Input
 					prefixItem={<Icon size={MEDIUM} type={SOLID_LOCK} color={GRAY} />}
 					type='password'
 					value={password}
-					onChange={(event) => {setPassword(event.target.value);}}
-					isReadOnly
+					onChange={_handleChangePassword}
+					errorText={passwordErrorText}
 				/>
 				<Button type={Button.TypeEnums.BUTTON}>Login</Button>
 				<div className="login__bottom">
