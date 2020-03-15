@@ -35,12 +35,14 @@ function Login() {
 					prefixItem={<Icon size={MEDIUM} type={SOLID_USER} color={GRAY} />}
 					value={account}
 					onChange={(event) => {setAccount(event.target.value);}}
+					isDisable
 				/>
 				<Input
 					prefixItem={<Icon size={MEDIUM} type={SOLID_LOCK} color={GRAY} />}
 					type='password'
 					value={password}
 					onChange={(event) => {setPassword(event.target.value);}}
+					isReadOnly
 				/>
 				<Button type={Button.TypeEnums.BUTTON}>Login</Button>
 				<div className="login__bottom">

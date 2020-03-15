@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should render corrent 1`] = `
+<div
+  className="input mock-class"
+>
+  <div
+    className="input__content"
+  >
+    <input
+      disabled={false}
+      onChange={[Function]}
+      placeholder="mock-placeholder"
+      readOnly={false}
+      type=""
+      value="mock-value"
+    />
+  </div>
+</div>
+`;
