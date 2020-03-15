@@ -24,7 +24,6 @@ function Login() {
 	const [ password, setPassword ] = useState('');
 	const [ isRemember, setIsRemember ] = useState(false);
 
-
 	return (
 		<div className="login">
 			<div className="login__content">

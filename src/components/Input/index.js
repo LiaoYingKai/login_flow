@@ -11,10 +11,7 @@ const propTypes = {
 	isReadOnly: PropTypes.bool,
 	placeholder: PropTypes.string,
 	prefixItem: PropTypes.any,
-	// verification: PropTypes.arrayOf(PropTypes.shape({
-	// 	rule: PropTypes.string,
-	// 	VerificationText: PropTypes.string,
-	// })),
+	errorText: PropTypes.string,
 	type: PropTypes.string,
 };
 
@@ -22,7 +19,6 @@ const defaultProps = {
 	onChange: () => {},
 	isDisable: false,
 	isReadOnly: false,
-	verification: [],
 };
 
 function Input({
@@ -33,17 +29,9 @@ function Input({
 	isReadOnly,
 	placeholder,
 	prefixItem,
-	// verification,
+	errorText,
 	type,
 }) {
-	// const isAllVerification = verification.filter(item => {
-	// 	if (value.test(item.rule)) {
-	// 		return item.VerificationText;
-	// 	}
-	// });
-
-	// const verificationText = isAllVerification[0] ? isAllVerification[0] : false;
-
 	return (
 		<div className={cx('input', className)}>
 			<div className="input__content">
@@ -57,10 +45,7 @@ function Input({
 					type={type}
 				/>
 			</div>
-			<p>
-				{/* { verificationText || null } */}
-				{/* test */}
-			</p>
+			{ errorText ? <p>{errorText}</p> : null }
 		</div>
 	);
 }
