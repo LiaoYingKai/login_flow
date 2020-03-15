@@ -78,6 +78,7 @@ function Login({
 					value={account}
 					onChange={_handleChangeAccount}
 					errorText={accountErrorText}
+					className="account"
 				/>
 				<Input
 					prefixItem={<Icon size={MEDIUM} type={SOLID_LOCK} color={GRAY} />}
@@ -85,10 +86,12 @@ function Login({
 					value={password}
 					onChange={_handleChangePassword}
 					errorText={passwordErrorText}
+					className="password"
 				/>
 				<Button
 					onClick={_handleLogin}
 					type={Button.TypeEnums.BUTTON}
+					className="submit-button"
 				>Login</Button>
 				<div className="login__bottom">
 					<div>
