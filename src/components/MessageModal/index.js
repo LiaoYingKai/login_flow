@@ -29,13 +29,12 @@ function MessageModal({
 	okText,
 }) {
 	return (
-		<React.Fragment>
-			<div className={cx({ "message-modal--mock": isVisible, })}/>
-			<div className={cx(
-				className,
-				"message-modal",
-				{ "message-modal--hidden": !isVisible, }
-			)}>
+		<div className={cx(
+			className,
+			"message-modal",
+			{ "message-modal--hidden": !isVisible, }
+		)}>
+			<div className="message-modal__content">
 				<div className="message-modal__title">
 					{title}
 				</div>
@@ -50,7 +49,7 @@ function MessageModal({
 					</Button>
 				</div>
 			</div>
-		</React.Fragment>
+		</div>
 	);
 }
 
