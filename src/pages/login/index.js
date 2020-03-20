@@ -4,6 +4,7 @@ import Button from '../../components/Button';
 import Icon from '../../components/Icon';
 import Checkbox from '../../components/Checkbox';
 import Input from '../../components/Input';
+import MessageModal from '../../components/MessageModal';
 import { withRouter } from 'react-router-dom';
 import { routePaths } from '../../routes';
 import './style.scss';
@@ -36,6 +37,8 @@ function Login({
 	const [ password, setPassword ] = useState('');
 	const [ passwordErrorText, setPasswordErrorText ] = useState('');
 	const [ isRemember, setIsRemember ] = useState(false);
+	const [ isVisable, setVisable ] = useState(false);
+	const [ messageText, setMessageText ] = useState('');
 
 	function _handleChangeAccount(event) {
 		const value = event.target.value;
@@ -52,18 +55,25 @@ function Login({
 	}
 
 	function _handleLogin() {
-		if (!account) {
-			setAccountErrorText('帳號爲必填');
-		}
-		if (!password) {
-			setPasswordErrorText('密碼爲必填');
-		}
+		if (!account) setAccountErrorText('帳號爲必填');
+
+		if (!password) setPasswordErrorText('密碼爲必填');
+
 		if (!account || !password) return;
-		if (account === 'test01' && password === '123qwe') {
-			history.push(HOME);
-		} else {
-			console.log('login fail');
+
+		if (account !== 'test01') {
+			setVisable(true);
+			setMessageText('帳號輸入錯誤');
+			return;
 		}
+
+		if (password !== '123qwe') {
+			setVisable(true);
+			setMessageText('密碼輸入錯誤');
+			return;
+		}
+
+		history.push(HOME);
 	}
 
 	return (
@@ -108,6 +118,11 @@ function Login({
 				Dont have a account?
 				<Button type={Button.TypeEnums.TEXT}>DEGISTER HERE</Button>
 			</div>
+			<MessageModal
+				isVisible={isVisable}
+				message={messageText}
+				onClickOk={() => {setVisable(false);}}
+			/>
 		</div>
 	);
 }
