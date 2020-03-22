@@ -1,42 +1,25 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 const propTypes = {
 	children: PropTypes.node,
-	isAuth: PropTypes.bool,
 	history: PropTypes.object,
 };
 
-class PrivateRoute extends Component {
-	render() {
-		const { children } = this.props;
+function PrivateRoute({
+	children,
+	history
+}) {
+	const isAuth = useSelector(state => state.auth.isAuth);
 
-		return (
-			<React.Fragment>
-				{children}
-			</React.Fragment>
-		);
+	if (!isAuth) {
+		history.replace('/');
+		
 	}
-	componentDidMount() {
-		const { isAuth, history } = this.props;
-
-		if (!isAuth) {
-			history.replace('/');
-		}
-	}
+	return children;
 }
 
 PrivateRoute.propTypes = propTypes;
 
-function mapStateToProps(state) {
-	return {
-		isAuth: state.auth.isAuth
-	};
-}
-
-function mapDispatchToProps() {
-	return {};
-}
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(PrivateRoute));
+export default withRouter(PrivateRoute);
