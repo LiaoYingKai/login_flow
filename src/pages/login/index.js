@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
 import Button from '../../components/Button';
 import Icon from '../../components/Icon';
 import Checkbox from '../../components/Checkbox';
@@ -8,6 +9,7 @@ import MessageModal from '../../components/MessageModal';
 import { withRouter } from 'react-router-dom';
 import { routePaths } from '../../routes';
 import './style.scss';
+import { checkAuthSuccess } from '../../actions/auth-actions';
 
 const propTypes = {
 	history: PropTypes.object,
@@ -32,6 +34,8 @@ const {
 function Login({
 	history,
 }) {
+	const dispatch = useDispatch();
+	const isAuth = useSelector(state => state.auth.isAuth);
 	const [ account, setAccount ] = useState('');
 	const [ accountErrorText, setAccountErrorText ] = useState('');
 	const [ password, setPassword ] = useState('');
@@ -73,8 +77,14 @@ function Login({
 			return;
 		}
 
-		history.push(HOME);
+		dispatch(checkAuthSuccess(true));
 	}
+
+	useEffect(() => {
+		if (isAuth) {
+			history.push(HOME);
+		}
+	}, [isAuth]);
 
 	return (
 		<div className="login">
@@ -100,7 +110,6 @@ function Login({
 						className="password"
 					/>
 					<Button
-						onClick={_handleLogin}
 						type={Button.TypeEnums.BUTTON}
 						className="submit-button"
 					>Login</Button>

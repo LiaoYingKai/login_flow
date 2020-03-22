@@ -10,9 +10,10 @@ export function checkAuth() {
 	};
 }
 
-export function checkAuthSuccess() {
+export function checkAuthSuccess(check) {
 	return {
 		type: CHECK_AUTH_SUCCESS,
+		check,
 	};
 }
 
