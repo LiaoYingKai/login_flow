@@ -1,12 +1,10 @@
 import { combineEpics } from 'redux-observable';
-import { addTodo } from './epics/todo-epics';
 import { combineReducers } from 'redux';
-import todo from './reducer/todo';
+import auth from './reducer/auth';
 
 export const rootEpic = combineEpics(
-	addTodo,
 );
 
 export const rootReducer = combineReducers({
-	todo
+	auth,
 });
