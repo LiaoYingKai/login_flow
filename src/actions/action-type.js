@@ -1,3 +1,3 @@
-export const ADD_TODO = 'ADD_TODO';
-export const ADD_TODO_SUCCESS = 'ADD_TODO_SUCCESS';
-export const ADD_TODO_FAIL = 'ADD_TODO_FAIL';
+export const START_CHECK_AUTH = 'START_CHECK_AUTH';
+export const CHECK_AUTH_SUCCESS = 'CHECK_AUTH_SUCCESS';
+export const CHECK_AUTH_FAILED = 'CHECK_AUTH_FAILED';
