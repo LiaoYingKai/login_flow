@@ -83,26 +83,28 @@ function Login({
 					<Icon type={REGULAR_USER}/>
 				</div>
 				<div className="login__content-title">Sign In</div>
-				<Input
-					prefixItem={<Icon size={MEDIUM} type={SOLID_USER} color={GRAY} />}
-					value={account}
-					onChange={_handleChangeAccount}
-					errorText={accountErrorText}
-					className="account"
-				/>
-				<Input
-					prefixItem={<Icon size={MEDIUM} type={SOLID_LOCK} color={GRAY} />}
-					type='password'
-					value={password}
-					onChange={_handleChangePassword}
-					errorText={passwordErrorText}
-					className="password"
-				/>
-				<Button
-					onClick={_handleLogin}
-					type={Button.TypeEnums.BUTTON}
-					className="submit-button"
-				>Login</Button>
+				<form onSubmit={_handleLogin} className="login__form">
+					<Input
+						prefixItem={<Icon size={MEDIUM} type={SOLID_USER} color={GRAY} />}
+						value={account}
+						onChange={_handleChangeAccount}
+						errorText={accountErrorText}
+						className="account"
+					/>
+					<Input
+						prefixItem={<Icon size={MEDIUM} type={SOLID_LOCK} color={GRAY} />}
+						type='password'
+						value={password}
+						onChange={_handleChangePassword}
+						errorText={passwordErrorText}
+						className="password"
+					/>
+					<Button
+						onClick={_handleLogin}
+						type={Button.TypeEnums.BUTTON}
+						className="submit-button"
+					>Login</Button>
+				</form>
 				<div className="login__bottom">
 					<div>
 						<Checkbox

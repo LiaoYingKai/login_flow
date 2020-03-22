@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Button from '../Button';
@@ -28,12 +28,31 @@ function MessageModal({
 	onClickOk,
 	okText,
 }) {
+	const modal = useRef(null);
+
+	function _handleKeyPress(event) {
+		if (event.key === "Enter") {
+			onClickOk();
+		}
+	}
+
+	useEffect(() => {
+		if (isVisible) {
+			modal.current.focus();
+		}
+
+	}, [isVisible]);
+
 	return (
 		<div className={cx(
 			className,
 			"message-modal",
 			{ "message-modal--hidden": !isVisible, }
-		)}>
+		)}
+		tabIndex="0"
+		onKeyPress={_handleKeyPress}
+		ref={modal}
+		>
 			<div className="message-modal__content">
 				<div className="message-modal__title">
 					{title}
